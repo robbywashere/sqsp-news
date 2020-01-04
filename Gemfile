@@ -62,3 +62,10 @@ gem 'devise', '4.7.1'
 
 
 gem 'autotest-suffix', '1.1.0'
+
+gem "guard", "~> 2.16", :groups => [:development, :test]
+gem "guard-rspec", "~> 4.7", :groups => [:development, :test]
+gem "rspec", "~> 3.9", :groups => [:development, :test]
+gem "rspec-rails", "~> 3.9", :groups => [:development, :test]
+
+gem "guard-puma", "~> 0.5.2", :group => :development
