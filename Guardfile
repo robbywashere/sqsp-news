@@ -69,7 +69,7 @@ guard :rspec, cmd: "bundle exec rspec" do
   end
 end
 
-guard 'puma' do
+guard 'puma', :port => 3000 do
   watch('Gemfile.lock')
   watch(%r{^config|lib|api/.*})
 end
