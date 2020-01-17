@@ -5,18 +5,21 @@
     <div class="columns">
       <div class="column is-4">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
         <div class="field">
           <%= f.label :email, class: 'label' %>
           <div class="control">
-            <%= f.email_field :email, class: 'input is-primary', autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, class: "input #{ flash.alert ? 'is-danger' : ''}", autofocus: true, autocomplete: "email" %>
           </div>
         </div>
 
         <div class="field">
           <%= f.label :password, class: 'label' %>
-          <%= f.password_field :password, class: 'input is-primary', autocomplete: "current-password" %>
+          <%= f.password_field :password, class: "input #{ flash.alert ? 'is-danger' : ''}", autocomplete: "current-password" %>
         </div>
+        <% if flash.alert %>
+        <p class="help is-danger"><%= flash.alert %></p>
+        <br />
+        <% end %>
 
         <% if devise_mapping.rememberable? %>
         <div class="field">
@@ -25,12 +28,13 @@
         </div>
         <% end %>
 
+
         <div class="actions">
           <%= f.submit "Log in", class: 'button is-info' %>
         </div>
         <% end %>
 
-        </br>
+        <br />
         <%= render "devise/shared/links" %>
       </div>
     </div>
