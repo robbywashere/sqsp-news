@@ -69,3 +69,7 @@ gem "rspec", "~> 3.9", :groups => [:development, :test]
 gem "rspec-rails", "~> 3.9", :groups => [:development, :test]
 
 gem "guard-puma", "~> 0.5.2", :group => :development
+
+gem "guard-livereload", "~> 2.5", :group => :development
+
+gem "rack-livereload", "~> 0.3.17", :group => :development
