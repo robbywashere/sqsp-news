@@ -1,3 +1,29 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#posts {
+  .null-img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 2px dashed #9F9F9F;
+    position: relative;
+
+    &:after {
+      $size: 12px;
+      content: "＋";
+      position: absolute;
+      vertical-align: middle;
+      width: $size;
+      height: $size;
+      font-size: $size;
+      line-height: $size;
+      margin: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+  }
+
+}
