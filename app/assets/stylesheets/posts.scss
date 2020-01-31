@@ -2,28 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #posts {
-  .null-img {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 2px dashed #9F9F9F;
-    position: relative;
+  .x-file-upload {
+    margin: 22px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    $upload-size: 44px;
+    .img-pre {
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      width: $upload-size;
+      height: $upload-size;
+      flex-shrink: 0;
+    }
+    .up-img {
+      display: inline-block;
+      flex-shrink: 0;
+      margin-right: 22px;
+      width: 44px;
+      height: 44px;
+      border: 2px dashed #9f9f9f;
+      position: relative;
 
-    &:after {
-      $size: 12px;
-      content: "＋";
-      position: absolute;
-      vertical-align: middle;
-      width: $size;
-      height: $size;
-      font-size: $size;
-      line-height: $size;
-      margin: auto;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      top: 0;
+      &:after {
+        $size: 16px;
+        content: '⇪';
+        position: absolute;
+        vertical-align: middle;
+        width: $size;
+        height: $size;
+        font-size: $size;
+        line-height: $size;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
     }
   }
-
 }

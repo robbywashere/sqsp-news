@@ -1,42 +1,44 @@
-<section>
-  <div class='container' style='margin-top: 22px'>
-    <h1 class="title is-4 is-spaced">New Post</h1>
-    <div class='columns'>
-      <div class='column is-4'>
-        <%= form_with(model: @post, local: true) do |form| %>
-        <% if @post.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-          <ul>
-            <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-        <% end %>
+<div>
+  <section class="section">
+    <div class='container'>
+      <h1 class="title is-4 is-spaced">New Post</h1>
+      <div class='columns'>
+        <div class='column is-4'>
+          <%= form_with(model: @post, local: true) do |form| %>
+          <% if @post.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <ul>
+              <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
 
-        <div class="field">
-          <%= form.label :title, class: "label" %>
-          <%= form.text_field :tile, class: "input" %>
-        </div>
-        <div class="field">
-          <%= form.label :body, class: "label" %>
-          <%= form.text_field :body, class: "input" %>
-        </div>
-        <div class="field">
-          <%= form.label :images, class: "label" %>
-          <div class="null-img"></div>
+          <div class="field">
+            <%= form.label :title, class: "label" %>
+            <%= form.text_field :tile, class: "input" %>
+          </div>
+          <div class="field">
+            <%= form.label :body, class: "label" %>
+            <%= form.text_area :body, class: "textarea has-fixed-size" %>
+          </div>
+          <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="5"
+            data-dropzone-max-files="5" data-dropzone-accepted-files="image/*">
+            <%= form.file_field :file, direct_upload: true, data: { target: 'dropzone.input' } %>
+            <div class="dropzone-msg dz-message needsclick">
+              <h3 class="dropzone-msg-title">Drop or click to upload.</h3>
+              <span class="dropzone-msg-desc">(images)</span>
+            </div>
+          </div>
+          <div class="actions">
+            <%= form.submit class: "button"%>
+          </div>
+          <% end %>
           <br />
-          <%= form.file_field :image, multiple: true %>
+          <%= link_to 'Back', posts_path %>
         </div>
-
-        <div class="actions">
-          <%= form.submit class: "button"%>
-        </div>
-        <% end %>
-        <br />
-        <%= link_to 'Back', posts_path %>
       </div>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
