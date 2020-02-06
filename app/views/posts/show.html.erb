@@ -3,6 +3,10 @@
 <p>
   <strong>User:</strong>
   <%= @post.user_id %>
+  <% for image in @post.images do %>
+  <%= image_tag(image) %>
+  <% end %>
+
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

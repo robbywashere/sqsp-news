@@ -9,7 +9,6 @@ export default class extends Controller {
   static targets = ['input'];
 
   connect() {
-    console.log('!');
     this.dropZone = createDropZone(this);
     this.hideFileInput();
     this.bindEvents();
@@ -50,9 +49,7 @@ export default class extends Controller {
   }
 
   get url() {
-    return this.hasInputTarget
-      ? this.inputTarget.getAttribute('data-direct-upload-url')
-      : 'http://foo';
+    return this.inputTarget.getAttribute('data-direct-upload-url');
   }
 
   get maxFiles() {

@@ -1,44 +1,13 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#posts {
-  .x-file-upload {
-    margin: 22px 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    $upload-size: 44px;
-    .img-pre {
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      width: $upload-size;
-      height: $upload-size;
-      flex-shrink: 0;
-    }
-    .up-img {
-      display: inline-block;
-      flex-shrink: 0;
-      margin-right: 22px;
-      width: 44px;
-      height: 44px;
-      border: 2px dashed #9f9f9f;
-      position: relative;
+@import 'bulma/sass/utilities/derived-variables.sass';
 
-      &:after {
-        $size: 16px;
-        content: '⇪';
-        position: absolute;
-        vertical-align: middle;
-        width: $size;
-        height: $size;
-        font-size: $size;
-        line-height: $size;
-        margin: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-      }
-    }
+#posts {
+  [data-controller='dropzone'] {
+    border-color: $primary;
+    border-style: dashed;
+    margin-bottom: 11px;
+    overflow-y: scroll;
   }
 }
