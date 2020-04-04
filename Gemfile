@@ -73,3 +73,5 @@ gem "guard-puma", "~> 0.5.2", :group => :development
 gem "guard-livereload", "~> 2.5", :group => :development
 
 gem "rack-livereload", "~> 0.3.17", :group => :development
+
+gem "rename", "~> 1.0"

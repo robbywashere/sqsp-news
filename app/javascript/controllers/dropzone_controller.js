@@ -1,7 +1,7 @@
 import { Controller } from 'stimulus';
 import { DirectUpload } from '@rails/activestorage';
 import Dropzone from 'dropzone';
-import { getMetaValue, toArray, findElement, removeElement, insertAfter } from 'lib/helpers';
+import { getMetaValue, findElement, removeElement, insertAfter } from 'lib/helpers';
 
 Dropzone.autoDiscover = false;
 
